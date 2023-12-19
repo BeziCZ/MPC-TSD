@@ -190,3 +190,80 @@
     \end{figure}\\
     Odpověď: DPSK
 \end{enumerate}
+
+\subsection{Zadání 4}
+\begin{enumerate}
+    \item \textbf{Jaký linkový kód je na nasledujícím obrázku použit k přenosu dat? Stanovte přenosovou
+    rychlost R, modulační rychlost M a minimální potřebnou šířku pásma B přenosového
+    kanálu, je-li doba trvání signálového prvku \(T_s = 125\mu s\)}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/MAMI.png}
+        \caption{Linkový kód}
+    \end{figure}\\
+    Jedná se o kód MAMI.\\
+    \(M = \frac{1}{T_s} = 8kBd\) \(R = \frac{1}{T_b} = 8kbit/s\) \(B_{min} = \frac{M}{2} = 4kHz\)
+    \item \textbf{Nakreslete blokové schéma a popiste rovnicemi demodulaci signalu BPSK součinovým
+    demodulátorem. Pozn. Modulovany signal je popsan rovnici \(s(t)=g(t)\cdot Sc\cdot cos(\omega_c t)\), kde
+    g(t) je modulacni signal.}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.5]{images/BPSKSchema.png}
+        \caption{BPSK schéma}
+    \end{figure}\\
+    Signál za násobičkou je popsán rovnicí: \(s_1(t) = (S_ccos(\omega_c t)\cdot g(t))\cdot 2cos(\omega_c t) = S_cg(t)\cdot 2cos^2(\omega_c t) = S_cg(t)+S_cg(t)cos(2\omega_ct)\)\\
+    Dolní propustí projde pouze signál: \(s_2(t) = S_cg(t)\)
+    \item \textbf{Systém OFDM používá 256 nosných. V zakladnim pasmu jsou signalove prvky tvoreny
+    modulaci QPSK a mají dobu trvani \(T_s = 32\mu s\). Jaka je celkova prenosova rychlost
+    systemu?}
+    \begin{gather*}
+        M = \frac{1}{T_s} = 31,25kBd\\
+        R = Mlog(Q) = 31,25\cdot 10^3 \cdot log_2(4) = 62,5kbit/s\\
+        R_{celk} = 256\cdot R = 16Mbit/s
+    \end{gather*}
+    \item \textbf{Nakreslete blokové schéma detektoru přechodu realizujícího metodu delay-and-multiply a
+    časové průběhy vstupního bipolarního NRZ signálu přenášejícího datovou posloupnost
+    01001 a odpovídajícího vnitřního a výstupního detektoru.
+    }
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.5]{images/delay-multiply.png}
+        \caption{Blokové schéma}
+    \end{figure}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/pruběhyDM.png}
+        \caption{Průběhy}
+    \end{figure}\\
+    \item \textbf{Stanovte entropii H a maximalni entropii H0 zdroje zprav produkujiciho posloupnost prvku
+    se vzajemne nezavislym vyskytem. Pravdepodobnosti prvku jsou na všech mistech
+    posloupnosti tyto: P(A) = 0,1; P(B) = P(C) = P(D) = 0,3}
+    \begin{gather*}
+        I_a = -log_2(P(A)) = 3,322Sh\\
+        I_b = -log_2(P(B)) = 1,737Sh\\
+        H = P(A)\cdot I_a + P(B)\cdot 3 \cdot I_b = 1,8936Sh/znak\\
+        H_{max} = logN = 2Sh/znak
+    \end{gather*}
+    
+    \item \textbf{Jaká je úloha ekvalizéru? K čemu slouží trénovací posloupnost?}\\
+    Ekvalizéry potlačují kmitočtové zkreslení signálu, které vzniká při průchodu sdělovacím kanálem. Trénovací posloupnost se užívá pro nastavení paramterů ekvalizéru.
+    \item \textbf{Jaké rozdělení hustoty pravděpodobnosti mají okamžité hodnoty počátečních fází úzkopásmového šumu?}\\
+    Rovnoměrné
+    \item \textbf{Odhadněte jednoprocentní šířku pásma kmitočtově modulovaného signálu, je-li horní mezní
+    kmitočet modulačního signálu \(F_{max} =15 kHz\) a index kmit. modulace \(\beta=5\)}
+    \begin{gather*}
+        \beta = \frac{\Delta f}{F_{max}} \Rightarrow \Delta f = 75kHz\\
+        B = 2\cdot (\Delta f + 3 F_{max}) = 240kHz
+    \end{gather*}
+    \item \textbf{Uveďte důvod zavedení vztažného klíčování DPSK.}\\
+    Odstraňuje problém s fázovou nejistotou.
+    \item \textbf{Nakreslete převodní charakteristiku y=f(x) obvodu, jehož odezvy na vstupní harmonický
+    signál jsou na následujících obrazcích. Jak se tento obvod (funkční blok) používaný v PCM
+    systémech nazývá?}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/4.10.png}
+        \caption{Průběhy}
+    \end{figure}\\
+    Jedná se o kompresor, malé signály zesiluje a velké nechává stejné
+\end{enumerate}
