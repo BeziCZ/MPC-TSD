@@ -333,3 +333,62 @@
     \item \textbf{Jak je definována hloubka amplitudové modulace a jakých hodnot nabývá?}\\
     Nabývá hodnot od 0 do 1 a je definována jako poměr amplitudového zdvihu a amplitudy nosné
 \end{enumerate}
+
+\subsection{Zadání 6}
+\begin{enumerate}
+    \item \textbf{Je dána modulace 64QAM. Doba trvání signálového prvku modulovaného signálu je \(1\mu s\). Jaká je přenosová rychlost?}
+    \begin{gather*}
+        M = \frac{1}{T_s} = \frac{1}{10^{-6}} = 1MBd\\
+        R = Mlog_2(Q) = 10^6log_2(64) = 6Mbit/s
+    \end{gather*}
+    \item \textbf{Modulačním signalem je řečový signál dislokovaný v kmit. pásmu od 300Hz do 3400 Hz.
+    Určete šířku spektra signálu SSB–SC.}
+    \begin{gather*}
+        B = f_{max} - f_{min} = 3400 - 300 = 3100Hz
+    \end{gather*}
+    \item \textbf{Jaké jsou dvě požadované vlastnosti linkových kódů}
+    \begin{itemize}
+        \item Potlačení SS signálů
+        \item Zabránění vzniku dalších úseků s konstantní úrovní
+    \end{itemize}
+    \item \textbf{Vypočtěte amplitudu základní tj. první harmonické složky unipolárního signálu NRZ při
+    přenosu periodické datové poosloupnosti 100100100 výška impulzů je 1V}
+    \begin{gather*}
+        C_1 = 2D\frac{\vartheta}{T_0}sinc(\frac{\vartheta}{2}\frac{2\pi}{T_0}) = \frac{2}{3}D\cdot \frac{sin(\frac{\pi}{3})}{\frac{\pi}{3}} = 0,55V
+    \end{gather*}
+    \item \textbf{Nakreslete blokové schéma systému pro obnovu nosné fázově klíčovaného signálu BPSK}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/DemodBPSK.png}
+        \caption{Schema}
+    \end{figure}\\
+    \item \textbf{Jakou metodu mnohonásobného přístupu používá vysílač na následujícím obrázku? Co
+    udává poměr přenosových rychlostí Rch a Rb?}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.5]{images/MoDS.png}
+        \caption{Schema}
+    \end{figure}\\
+    Modulátor s přímou modulací kódovu posloupností(DS). Poměr rychlostí udává činitel rozprostření
+    \item \textbf{Unipolární signál NRZ s výškou impulzů D=5V je zarušen normálním šumem s efektivní
+    hodnotou napětí 1,5V. Pravděpodobnosti výskytu 0 a 1 jsou stejné. Stanovte
+    pravděpodobnost Pch chybného příjmu.}
+    \begin{gather*}
+        P_E = F_0(\frac{D_0 - D_1}{2\sigma}) = F_0(-1,5) = 0,048
+    \end{gather*}
+    \item \textbf{Jakou minimální kmitočtovou šířku pásma propustnosti pro přenos signálu ASK. je li
+    přenosová rychlost R=64 kbit/s}
+    \begin{gather*}
+        B_{min} = 2F = M = R = 64kHz
+    \end{gather*}
+    \item \textbf{Nakreslete převodní charakteristiky y=f(x) kompresoru a expandoru}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.5]{images/PrevodniCharakteristiky.png}
+        \caption{Kompresor expander}
+    \end{figure}\\
+    \item \textbf{Na vstup součinového (koherentního) demodulátoru působí pouze úzkopásmový šum. Jaké
+    je rozdělení hustoty pravděpodobnosti mají okamžité hodnoty šumu na výstupu
+    demodulátoru a jaká bude jeho střední hodnota?}\\
+    Rovnoměrné
+\end{enumerate}
