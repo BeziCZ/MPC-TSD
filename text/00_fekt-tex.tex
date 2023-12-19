@@ -265,5 +265,71 @@
         \includegraphics[scale = 0.3]{images/4.10.png}
         \caption{Průběhy}
     \end{figure}\\
-    Jedná se o kompresor, malé signály zesiluje a velké nechává stejné
+    Jedná se o kompresor, malé signály zesiluje a velké nechává stejné.\\
+\end{enumerate}
+
+\subsection{Zadání 5}
+\begin{enumerate}
+    \item \textbf{Je dána amplitudová modulace DSB. Klíčová amplituda nosné je 5V, hloubka modulace je
+    30\%. Kmitočet harmonického modulačního signálu je 1 kHz, kmitočet nosné je 1 MHz.
+    Modulovaný signál působí na zátěž 50 ohmů. Vypočtěte špičkové napětí modulovaného
+    signálu max[s(t)].}
+    \begin{gather*}
+        m = \frac{\Delta S}{S_c} \Rightarrow \Delta S = m\cdot S_c = 1,5V\\
+        S_{max} = S_c + \Delta S = 6,5V
+    \end{gather*}
+    \item \textbf{Nakreslete blokové schéma skrambleru, který realizuje skramplovací polynom \(P(x) = 1
+    \bigoplus  x^2 \bigoplus  x^5\). Jaký je účel použití skrambleru?}\\
+    Výsledný signál neobsahuje shluky 0 nebo 1. Např. 00000000 nebo 111111, to umožnuje
+    jednodušší synchronizaci v přijímači.\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/Skrambler.png}
+        \caption{Schéma skrambleru}
+    \end{figure}\\
+    \item \textbf{Signál v základním pásmu je tvořen signálovými prvky linkového kódu 2B1Q s dobou
+    trvání \(T_s = 250\mu s\). Stanovte přenosovou rychlost R a modulační rychlost M.}
+    \begin{gather*}
+        M = \frac{1}{T_s} = 4kBd\\
+        M = \frac{R}{2} \Rightarrow R = 2M = 8kbit/s
+    \end{gather*}
+    \item \textbf{Určete amplitudu harmonického složky s kmitočtem 10,003 MHz fázově modulovaného
+    signálu. Fázový zdvih je 5rad. kmitočet nosné je 10MHz. amplituda nosné je 5V. Modulační
+    signál je \(f(t) = sin(2\pi \cdot 103t)\) [V]}
+    \begin{gather*}
+        n = \frac{f_n - f_c}{F_{max}} = \frac{10,003\cdot 10^6 - 10\cdot 10^6}{10^3} = 3\\
+        S_3 = S_c \left | J_3(\beta) \right | = 5\cdot \left | J_3(5) \right | = 0,68V
+    \end{gather*}
+    \item \textbf{Jistý druh modulace je popsán rovnicí \(s(t) = \sum_{n = -\infty}^{\infty} \sum_{m=0}^{M-1}a_{m,n}x_{m,n}\).Co udává proměnná
+    M?}\\
+    Jedná se o modulaci OFDM a M udává počet nosných.
+    \item \textbf{Zakreslete blokové schéma modulátoru MSK. Jaký musí být úhlový kmitočet omegar
+    tvarovacího harmonického signálu, je-li přenosová rychlost na vstupu modulátoru 64 kbps}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/MSK.png}
+        \caption{Schéma MSK}
+    \end{figure}\\
+    \item \textbf{Určete pradvěpodobnost chybného příjmu signálu DPSK, je li poměr amplitudy nosné a
+    efektivní hodnoty šumu na vstupu součinového tj. koherentního demodulátoru \(S_c/\sigma
+    =-2,9\)}
+    \begin{gather*}
+        P_E = 2F_0(\frac{-S_c}{\sigma}) = 2F_0(-2,9) = 3,72\cdot 10^{-2}
+    \end{gather*}
+    \item \textbf{Jaký druh modulace odpovídá následujícímu obrázku?}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.3]{images/PWMAsy.png}
+        \caption{Zadání}
+    \end{figure}\\
+    Je to šířková impulsová asymetrická modulace.
+    \item \textbf{V osách 1 a O nakreslete vektorový diagram modulace QPSK. Vyznačte všechny možné
+    přechody mezi po sobě jdoucími symboly.}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.5]{images/QPSKMal.png}
+        \caption{QPSK}
+    \end{figure}\\
+    \item \textbf{Jak je definována hloubka amplitudové modulace a jakých hodnot nabývá?}\\
+    Nabývá hodnot od 0 do 1 a je definována jako poměr amplitudového zdvihu a amplitudy nosné
 \end{enumerate}
