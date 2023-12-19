@@ -19,7 +19,6 @@
         \centering
         \includegraphics[scale = 0.5]{images/QPSK.png}
         \caption{Modulátor}
-        \label{fig:enter-label}
     \end{figure}
     \item \textbf{Je dán modulátor 256QAM. Kolika stavový signál je v kanálu I a v kanálu Q?}\
     \begin{align*}
@@ -38,7 +37,6 @@
         \centering
         \includegraphics[scale = 0.5]{images/NRZfiltr.png}
         \caption{Průběh a odezva}
-        \label{fig:enter-label}
     \end{figure}
     \item \textbf{Jaký je účel interleavingu (prokládání), v čem spočívá jeho princip, jakým negativním jevem
     je provázen?}
@@ -65,11 +63,11 @@
         \centering
         \includegraphics[scale = 0.5]{images/NyquistFilter.png}
         \caption{Nyquistův filter}
-        \label{fig:enter-label}
     \end{figure}
 \end{enumerate}
 
 \subsection{Zadání 2}
+
 \begin{enumerate}
     \item \textbf{Jaký musí být minimální vzorkovací kmitočet kodéru delta modulace, aby nedošlo k jeho
     přetížení, je-li maximální strmost modulačního signálu max [f`(t)] = 800V/s a kvantizační
@@ -84,7 +82,6 @@
         \centering
         \includegraphics[scale = 0.3]{images/QPSK}
         \caption{Modulátor}
-        \label{fig:enter-label}
     \end{figure}\\
     Je to QPSK. Počáteční fáze na rozhraní sousedních signálových prvků se mohou měnit o \(\pm \frac{pi}{2} = \pm 90^{\circ}\).
     \item \textbf{Nakreslete časový průběh bipolárního NRZ vyjadřujícího datovou posloupnost 10110 a
@@ -93,7 +90,6 @@
         \centering
         \includegraphics[scale = 0.7]{images/VybInteg.png}
         \caption{Průběh a odezva}
-        \label{fig:enter-label}
     \end{figure}
     \item \textbf{Je dán kvadraturní modulátor MQAM. Kanál I má 8 stavů, kanál Q má také 8 stavů. Kolik
     bitů vyjadřuje jeden signálový prvek výsledného modulovaného signálu na výstupu modulátoru.}
@@ -116,7 +112,6 @@
         \centering
         \includegraphics[scale = 0.7]{images/SDM.png}
         \caption{Sigma-Delta modulátor}
-        \label{fig:enter-label}
     \end{figure}
     \item \textbf{Bipolárním signálem RZ o napěťových úrovních +1V a -1V je přenášena periodická datová
     posloupnost 110110110 Doba trvání impulzu \(\vartheta\) je poloviční oproti trvání bitu,
@@ -133,7 +128,65 @@
         \centering
         \includegraphics[scale = 0.4]{images/BPSK.png}
         \caption{Spektrum BPSK}
-        \label{fig:enter-label}
     \end{figure}
+\end{enumerate}
 
+\subsection{Zadání 3}
+\begin{enumerate}
+    \item \textbf{Je dána amplitudová modulace DSB-SC. Klidová amplituda nosné je 5V, hloubka modulace
+    je \(30\%\). Kmitočet harmonického modulačního signálu je 1kHz, kmitočet nosné je 1MHz.
+    Modulovaný signál působí na zátěž 50 ohmů. Vypočtěte výkon modulovaného signálu na
+    této zátěži.}
+    \begin{align*}
+        P = 2P_s = 2\cdot\frac{(\frac{S_s}{\sqrt{2}})^2}{R} = 2\cdot\frac{\frac{m^2\cdot S_c^2}{8}}{r} = 2\cdot\frac{m^2\cdot S_c^2}{8R} = 11,25mV
+    \end{align*}
+    \item \textbf{Data jsou přenášena rychlostí 9,6 kbps. Jaká je modulační rychlost je-li použit linkový kód
+    4B3T?}
+    \begin{align*}
+        M = \frac{3}{4}R = 7,2kBd
+    \end{align*}
+    \item \textbf{Určete amplitudu harmonické složky s kmitočtem 10,002 MHz kmitočtově modulovaného
+    signálu. Kmitočtový zdvih je 6 kHz, kmitočet nosné je 10MHz, amplituda nosné je 2V a
+    modulační signál je \(f(t)=cos(2\pi\cdot 2\cdot10^3)\cdot t + \varphi\)}
+    \begin{gather*}
+        F = 2kHz\\
+        \beta = \frac{\Delta f}{F} = 3\\
+        n = \frac{f_n - f_c}{F} = \frac{10,002\cdot10^6 - 10\cdot10^6}{2\cdot10^3} = 1\\
+        S_1 = S_c \left |J_1(\beta) \right | = 0,66V
+    \end{gather*}
+    \item \textbf{Nakreslete blokové schéma demodulátoru QPSK}\\
+    Zadání 1 otázka 3
+    \item \textbf{Čím lze kompenzovat aperturové zkreslení u PAM II ?}\\
+    Volit kratší vzorkovací periodu a vzorkovat tak častěji než je teoreticky nutné nebo před D/A převodem signál převzorkovat.
+    \item \textbf{Je dán kvadraturní modulátor MQAM. Kanál I má 8 stavů, kanál Q má také 8 stavů. Kolik
+    bitů vyjadřuje jeden sign. prvek výsledného modulovaného signálu na výstupu modulátoru.}\\
+    Zadání 2 otázka 4
+    \newpage
+    \item \textbf{Nakreslete blokové schéma modulátoru delta}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.7]{images/DM.png}
+        \caption{Delta modulátor}
+    \end{figure}
+    \item \textbf{Určete pravděpodobnost chybného příjmu \(P_E\) amplitudově klíčovaného signálu ASK, je-li
+    poměr amplitudy nosné a efektivní hodnoty šumu na vstupu součinového (koherentniho)
+    demodulátoru \(S_c/\sigma\) = 2,9. Pravděpodobnost výskytu log. 0 a 1 jsou stejné.}
+    \begin{gather*}
+        P(0)=P(1)=0,5\\
+        P_E = F_0(-\frac{1}{2}\cdot\frac{S_c}{\sigma}) = F_0(-1,45) = 7,35\cdot10^{-2}
+    \end{gather*}
+    \item \textbf{Vyjmenujte čtyři základní metody mnohonásobného přístupu. (Celé názvy, ne jen zkratky)}
+    \begin{itemize}
+        \item FDMA - frequency division multiple access
+        \item TDMA - time division multiple access
+        \item CDMA - code division multiple access
+        \item ALOHA
+    \end{itemize}
+    \item \textbf{Jakým druhem klíčování byl vytvořen signál na následujícím obrázku?}\\
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale = 0.7]{images/signal.png}
+        \caption{Signál}
+    \end{figure}\\
+    Odpověď: DPSK
 \end{enumerate}
