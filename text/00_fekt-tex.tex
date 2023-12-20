@@ -105,7 +105,7 @@
     informace přenesené za jednotku času), je-li horní mezní kmitočet kanálu chápaného jako
     dolní propust \(f_h = 500Hz\)}
     \begin{align*}
-        C' = 2 \cdot f_h \cdot C = 600Sh/znak
+        C' = 2 \cdot f_h \cdot C = 600Sh/s
     \end{align*}
     \item \textbf{Nakreslete blokové schéma modulátoru sigma–delta}
     \begin{figure}[h]
@@ -242,11 +242,11 @@
         I_a = -log_2(P(A)) = 3,322Sh\\
         I_b = -log_2(P(B)) = 1,737Sh\\
         H = P(A)\cdot I_a + P(B)\cdot 3 \cdot I_b = 1,8936Sh/znak\\
-        H_{max} = logN = 2Sh/znak
+        H_{0} = log_2N = 2Sh/znak
     \end{gather*}
     
     \item \textbf{Jaká je úloha ekvalizéru? K čemu slouží trénovací posloupnost?}\\
-    Ekvalizéry potlačují kmitočtové zkreslení signálu, které vzniká při průchodu sdělovacím kanálem. Trénovací posloupnost se užívá pro nastavení paramterů ekvalizéru.
+    Ekvalizéry potlačují kmitočtové zkreslení signálu, které vzniká při průchodu sdělovacím kanálem. Trénovací posloupnost se užívá pro nastavení parametrů ekvalizéru.
     \item \textbf{Jaké rozdělení hustoty pravděpodobnosti mají okamžité hodnoty počátečních fází úzkopásmového šumu?}\\
     Rovnoměrné
     \item \textbf{Odhadněte jednoprocentní šířku pásma kmitočtově modulovaného signálu, je-li horní mezní
@@ -256,7 +256,7 @@
         B = 2\cdot (\Delta f + 3 F_{max}) = 240kHz
     \end{gather*}
     \item \textbf{Uveďte důvod zavedení vztažného klíčování DPSK.}\\
-    Odstraňuje problém s fázovou nejistotou.
+    Odstraňuje problém s fázovou nejistotou. Oproti BPSK tak při změně fáze se změní pouze jeden bit a ne všechny následující.
     \item \textbf{Nakreslete převodní charakteristiku y=f(x) obvodu, jehož odezvy na vstupní harmonický
     signál jsou na následujících obrazcích. Jak se tento obvod (funkční blok) používaný v PCM
     systémech nazývá?}\\
@@ -295,7 +295,7 @@
     \end{gather*}
     \item \textbf{Určete amplitudu harmonického složky s kmitočtem 10,003 MHz fázově modulovaného
     signálu. Fázový zdvih je 5rad. kmitočet nosné je 10MHz. amplituda nosné je 5V. Modulační
-    signál je \(f(t) = sin(2\pi \cdot 103t)\) [V]}
+    signál je \(f(t) = sin(2\pi \cdot 10^3t)\) [V]}
     \begin{gather*}
         n = \frac{f_n - f_c}{F_{max}} = \frac{10,003\cdot 10^6 - 10\cdot 10^6}{10^3} = 3\\
         S_3 = S_c \left | J_3(\beta) \right | = 5\cdot \left | J_3(5) \right | = 0,68V
@@ -303,14 +303,15 @@
     \item \textbf{Jistý druh modulace je popsán rovnicí \(s(t) = \sum_{n = -\infty}^{\infty} \sum_{m=0}^{M-1}a_{m,n}x_{m,n}\).Co udává proměnná
     M?}\\
     Jedná se o modulaci OFDM a M udává počet nosných.
-    \item \textbf{Zakreslete blokové schéma modulátoru MSK. Jaký musí být úhlový kmitočet omegar
-    tvarovacího harmonického signálu, je-li přenosová rychlost na vstupu modulátoru 64 kbps}
+    \item \textbf{Zakreslete blokové schéma modulátoru MSK. Jaký musí být úhlový kmitočet \(\omega_r\)
+    tvarovacího harmonického signálu, je-li přenosová rychlost na vstupu modulátoru 64 kbps}\\
     \begin{figure}[h]
         \centering
         \includegraphics[scale = 0.3]{images/MSK.png}
         \caption{Schéma MSK}
     \end{figure}\\
-    \item \textbf{Určete pradvěpodobnost chybného příjmu signálu DPSK, je li poměr amplitudy nosné a
+    \(\omega_r = 2\pi\Delta f = 2\pi\frac{R}{4} = 100kHz\)
+    \item \textbf{Určete pravděpodobnost chybného příjmu signálu DPSK, je li poměr amplitudy nosné a
     efektivní hodnoty šumu na vstupu součinového tj. koherentního demodulátoru \(S_c/\sigma
     =-2,9\)}
     \begin{gather*}
@@ -323,7 +324,7 @@
         \caption{Zadání}
     \end{figure}\\
     Je to šířková impulsová asymetrická modulace.
-    \item \textbf{V osách 1 a O nakreslete vektorový diagram modulace QPSK. Vyznačte všechny možné
+    \item \textbf{V osách I a Q nakreslete vektorový diagram modulace QPSK. Vyznačte všechny možné
     přechody mezi po sobě jdoucími symboly.}
     \begin{figure}[h]
         \centering
@@ -348,7 +349,7 @@
     \end{gather*}
     \item \textbf{Jaké jsou dvě požadované vlastnosti linkových kódů}
     \begin{itemize}
-        \item Potlačení SS signálů
+        \item Potlačení SS složky
         \item Zabránění vzniku dalších úseků s konstantní úrovní
     \end{itemize}
     \item \textbf{Vypočtěte amplitudu základní tj. první harmonické složky unipolárního signálu NRZ při

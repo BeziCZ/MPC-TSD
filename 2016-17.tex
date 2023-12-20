@@ -1,7 +1,7 @@
 \section{Zkoušky 2016 a 2017}
 \subsection{2016}
 \begin{enumerate}
-    \item \textbf{Jaký musí bát minimální kmitočtový zdvih $\Delta f$ modulace MSK, jestliže hodláme přenáset binární data rychlostí 100kbps}
+    \item \textbf{Jaký musí být minimální kmitočtový zdvih $\Delta f$ modulace MSK, jestliže hodláme přenáset binární data rychlostí 100kbps}
     \begin{gather*}
         R=100 kbps \\
         \Delta f=\frac{R}{4}=25kHz
@@ -33,7 +33,7 @@
         \label{fig:enter-label}
     \end{figure}
     \clearpage
-    \item \textbf{Bipolárním signálem RZ o napětových ůrovních 5 a -5 V je přenášena periodická datová posloupnost 110110110, doba trvání impulzu je poloviční oproti době trvání bitu, která je 25O $\mu s$. Určete stejnosměrnou složku a přenosovou rychlost} 
+    \item \textbf{Bipolárním signálem RZ o napětových úrovních 5 a -5 V je přenášena periodická datová posloupnost 110110110, doba trvání impulzu je poloviční oproti době trvání bitu, která je 250 $\mu s$. Určete stejnosměrnou složku a přenosovou rychlost} 
     \begin{gather*}
         T_b=250 \mu s \\
         \theta = T_b/2 \\
@@ -55,14 +55,14 @@
 
     Rovnoměrné od 0 do $2\pi$ rad
 
-    \item \textbf{Je dána amplitodová modulace DSB. Klidová amplituda nosné je 6V, hloubka je 30\%. Kmitočet modulačního signálu je 1 Hz. Modulovaný signál působí na zátěž 50 $\Omega$. Vypočtetě špičkovou hodnotu napětí modulovaného signálu. }
+    \item \textbf{Je dána amplitudová modulace DSB. Klidová amplituda nosné je 6V, hloubka je 30\%. Kmitočet modulačního signálu je 1 Hz. Modulovaný signál působí na zátěž 50 $\Omega$. Vypočtetě špičkovou hodnotu napětí modulovaného signálu. }
     \begin{gather*}
         m=\frac{\Delta S}{S_c} \\
         \Delta S =m*S_c \\
         S_{max}=S_c+\Delta S=S_c+m*S_c=6+0.3*6=7.8 
     \end{gather*}
 
-    \item \textbf{Jakou výhodu má použití vztažného klíčování DPSK oproti BPSK.}
+    \item \textbf{Jakou výhodu má použití vztažného klíčování DPSK oproti BPSK.}\\
     Při nezáměrné změně fáze se chyba u DPSK projeví pouze v jednom bitu, oproti BPSK, kde dojde k obrácení celé následující sekvence.
     \item \textbf{Do připraveného grafu zakreslete modulovou kmitočtovou charekteristiku ideálního Nyquistova filtru symbolových přeslechů. Jaká hodnota činitele $\alpha$ odpovídí tomuto ideálnímu filtru?}
     \begin{figure}[h!]
@@ -70,14 +70,16 @@
         \includegraphics{images/NyqIdeal.png}
         \caption{Ideální Nyquistuv filtr}
         \label{fig:enter-label}
-    \end{figure}
+    \end{figure}\\
     Odpovídá $\alpha=0$
 \end{enumerate}
 \subsection{2017}
 \begin{enumerate}
     \item \textbf{Jaká je modulační rychlost systému 32QAM, jestliže na vstup modulátoru přinášíme NRZ modulační signál s dobou trvání signálového prvku 50 $\mu s$}?
     \begin{gather*}
-        M=\frac{1}{T_s}=\frac{1}{50*10^{-6}}=20 kBd  
+        N = log_2Q = log_232 = 5\\
+        T_s = N \cdot \vartheta = 250\mu s\\
+        M=\frac{1}{T_s}=\frac{1}{250*10^{-6}}=4 kBd  
     \end{gather*}
 
     \item \textbf{Nakreslete blokové schéma přizpůsobeného filtru pro pravoúhlý impulz a do připraveného grafu nakreslete jeho odezvu.}
@@ -94,7 +96,7 @@
         \label{fig:enter-label}
     \end{figure}
 
-    \item \textbf{Kapacita binárního kanálu je $C=0.625 SH/znak$. Stanovte nejnižší možný horní kmitočet kanálu potřebný pro přenos v základním pásmuu, jestliže kapacita kanálu C' má být 1000Sh/s}
+    \item \textbf{Kapacita binárního kanálu je $C=0.625 SH/znak$. Stanovte nejnižší možný horní kmitočet kanálu potřebný pro přenos v základním pásmu, jestliže kapacita kanálu C' má být 1000Sh/s}
     \begin{gather*}
         C'=2f_h*C \\
         f_h=\frac{C'}{2C}=\frac{1000}{2*0.625}=800 Hz
@@ -126,7 +128,7 @@
     
     Snižujeme snížením Ts = více vzorků, předzpracováním signálu, nebo diskrétní interpolací vzorků
 
-    \item \textbf{V osách I Q nakreslete diagram přechodů stavů $\pi$-DQPSK. Jaká může být u této modulace max změna fáze na rozhraní dvou signálových prvků}
+    \item \textbf{V osách I Q nakreslete diagram přechodů stavů $\frac{\pi}{4}$-DQPSK. Jaká může být u této modulace max změna fáze na rozhraní dvou signálových prvků}
     \begin{figure}[h!]
         \centering
         \includegraphics{images/DQPSK.png}
@@ -134,7 +136,7 @@
         \label{fig:enter-label}
     \end{figure}
     
-    Max přechod je 135 stupnů
+    Max přechod je 135 stupňů
 
     \item \textbf{Vypočtěte amplitudu první harm. složky Uni RZ signálu při přenoso posloupnosti 1111. 1 je vyjádřena kladním impulzem o výšce 5V a šířce 250 $\mu$ s následována stejně velkou mezerou. Jakou minimální šířku pásma kanálu potřebujeme pro přenos tohoto signálu}
     \begin{gather*}
@@ -150,7 +152,7 @@
 
     Konvoluční, blokový interleaving
 
-    Způsobuje dopravzní zpoždení
+    Způsobuje dopravní zpoždení
 
     \item \textbf{Do připraveného grafu zakreslete modulovou kmitočtovou charakteristiku raised-cosine filtru s činitel $\alpha=1$}
     \begin{figure}[h!]
@@ -181,7 +183,7 @@
         B_{max}=\frac{f_1-f_0}{2}
     \end{gather*}
     
-    \item \textbf{QAM modulace, zadán počet stavů, $T_s$, vypočítat rychlsot}
+    \item \textbf{QAM modulace, zadán počet stavů, $T_s$, vypočítat rychlost}
     \begin{gather*}
         M=\frac{1}{T_s} \\
         R=M*log_2(Q) 
@@ -201,19 +203,17 @@
         \label{fig:enter-label}
     \end{figure}
 
-    \item \textbf{Režimi ekvalizátoru}
-
+    \item \textbf{Režimy ekvalizátoru}\\
       Trénink, sledování
     \item \textbf{HDB3- zakodovat sekvenci}
 
-    Bi-rz kod, podobný  AMI, střídají se amplitudy impulzu u jedniček. V případě že je po sobě víc než tři 0, vznikne V impulz ve stejné amplitudě jako minulý impulz. Pokud by stejnésměrná složka byla nenulová, vznikne také proti impulz u další nuly do opačné amplitudy
+    Bi-rz kod, podobný  AMI, střídají se amplitudy impulzu u jedniček. V případě že je po sobě víc než tři 0, vznikne V impulz ve stejné amplitudě jako minulý impulz. Pokud by stejnosměrná složka byla nenulová, vznikne také proti impulz u další nuly do opačné amplitudy
 
-    \item  \textbf{O jakou se jedná modulaci}
+    \item  \textbf{O jakou se jedná modulaci}\\
     \begin{figure}[h!]
         \centering
         \includegraphics{images/PPM.png}
         \label{fig:enter-label}
     \end{figure}
-\clearpage
     PPM - pulzně polohová modulace
 \end{enumerate}
